@@ -3,7 +3,7 @@ cd /var/www/html/InquiryMS/code
 
 php /usr/local/bin/composer install
 
-chmod -R 777 storage public vendor bootstrap 
+sudo chmod -R 777 storage public vendor bootstrap database
 
 php /usr/local/bin/composer dump-autoload
 php artisan config:clear
