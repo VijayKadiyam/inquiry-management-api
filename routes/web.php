@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Companies\Company;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +14,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return Company::all();
+}); 
