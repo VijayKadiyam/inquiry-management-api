@@ -20,10 +20,7 @@ class InquiryController extends Controller
    *@
    */
   public function index()
-  {
-    return response()->json([
-      'data'  =>  'hey'
-    ]); 
+  {  
     $company = Company::where('id', '=', request()->header('company_id'))->first();
     if($company)
       $inquiries = $company->inquiries;
