@@ -22,9 +22,9 @@ class InquiryController extends Controller
   public function index()
   { 
     return response()->json([
-      'data'  =>  \Request::header('Authorization')
+      'data'  =>  \Request::header('company-id')
     ]);
-    $company = Company::where('id', '=', request()->header('company_id'))->first();
+    $company = Company::where('id', '=', request()->header('company-id'))->first();
     if($company)
       $inquiries = $company->inquiries;
     else
