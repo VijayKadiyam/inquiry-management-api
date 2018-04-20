@@ -123,8 +123,8 @@ class Inquiry extends Model
       $inquiry->update(request()->all());
     }
     else {
-      if(request()->header('company_id')) {
-        $company = Company::find(request()->header('company_id'));
+      if(request()->header('company-id')) {
+        $company = Company::find(request()->header('company-id'));
         if($company)
           $company ? $company->inquiries()->save($this) : '';
       }  

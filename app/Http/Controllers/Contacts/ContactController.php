@@ -21,7 +21,7 @@ class ContactController extends Controller
    */
   public function index()
   {
-    $company = Company::where('id', '=', request()->header('company_id'))->first();
+    $company = Company::where('id', '=', request()->header('company-id'))->first();
     if($company)
       $contacts = $company->contacts;
     else
@@ -71,7 +71,7 @@ class ContactController extends Controller
    */
   public function show(Contact $contact)
   {
-    $company = Company::where('id', '=', request()->header('company_id'))->first();
+    $company = Company::where('id', '=', request()->header('company-id'))->first();
     if($company){
       $contact = $company->contacts->find($contact->id);
     }

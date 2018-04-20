@@ -52,7 +52,7 @@ class InquiryController extends Controller
   	$inquiry = new Inquiry($request->only('contact_id', 'date', 'cp_id'));
   	$inquiry->store();
 
-    $company = Company::where('id', '=', request()->header('company_id'))->first();
+    $company = Company::where('id', '=', request()->header('company-id'))->first();
     // dd($company->inquiries()->find($inquiry->id)->toArray());
 
   	return response()->json([
@@ -67,7 +67,7 @@ class InquiryController extends Controller
    */
   public function show(Inquiry $inquiry)
   {
-    $company = Company::where('id', '=', request()->header('company_id'))->first();
+    $company = Company::where('id', '=', request()->header('company-id'))->first();
     $inquiry = optional($company->inquiries)->find($inquiry->id);
 
     return response()->json([
@@ -93,7 +93,7 @@ class InquiryController extends Controller
 
     $inquiry->store();
 
-    $company = Company::where('id', '=', request()->header('company_id'))->first();
+    $company = Company::where('id', '=', request()->header('company-id'))->first();
     // dd($company->inquiries()->find($inquiry->id)->toArray());
 
     return response()->json([

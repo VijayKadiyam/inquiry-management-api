@@ -40,8 +40,8 @@ class Mode extends Model
    */
   public function store()
   {
-  	if(request()->header('company_id')) {
-      $company = Company::find(request()->header('company_id'));
+  	if(request()->header('company-id')) {
+      $company = Company::find(request()->header('company-id'));
       if($company)
         $company ? $company->modes()->save($this) : '';
     } 
